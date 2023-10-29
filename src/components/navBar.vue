@@ -1,7 +1,7 @@
-<template>
+<template id="navWrapper">
   <v-app
     style="
-      width: fit-content;
+      width: max-content;
       overflow-x: hidden;
       display: grid;
       grid-template-columns: auto, auto;
@@ -71,6 +71,7 @@
         left: calc(3rem - 1px);
         background-color: rgb(100, 137, 174);
         display: inline;
+        transition: all 0.4s ease;
       "
     >
       <v-list>
@@ -103,6 +104,7 @@
         left: calc(3rem - 1px);
         background-color: rgb(100, 137, 174);
         display: inline;
+        transition: all 0.4s ease;
       "
     >
       <v-list>
@@ -153,6 +155,7 @@
         grid-area: drawers;
         left: calc(3rem - 1px);
         background-color: rgb(100, 137, 174);
+        transition: all 0.4s ease;
       "
     >
       <v-list>
