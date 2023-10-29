@@ -63,14 +63,14 @@
     <!-- ACCOUNT -->
 
     <v-navigation-drawer
-      v-if="accDrawer"
       v-model="accDrawer"
       id="accDrawer"
       class="drawers"
       style="
         grid-area: drawers;
-        left: 3rem;
+        left: calc(3rem - 1px);
         background-color: rgb(100, 137, 174);
+        display: inline;
       "
     >
       <v-list>
@@ -95,14 +95,14 @@
     <!-- FRIENDS -->
 
     <v-navigation-drawer
-      v-if="friendsDrawer"
       v-model="friendsDrawer"
       id="friendsDrawer"
       class="drawers"
       style="
         grid-area: drawers;
-        left: 3rem;
+        left: calc(3rem - 1px);
         background-color: rgb(100, 137, 174);
+        display: inline;
       "
     >
       <v-list>
@@ -145,13 +145,13 @@
     <!-- ABOUT -->
 
     <v-navigation-drawer
-      v-if="infoDrawer"
       v-model="infoDrawer"
       id="infoDrawer"
       class="drawers"
       style="
+        display: inline;
         grid-area: drawers;
-        left: 3rem;
+        left: calc(3rem - 1px);
         background-color: rgb(100, 137, 174);
       "
     >
@@ -165,12 +165,6 @@
 </template>
 
 <script>
-//v-model="infoDrawer" class="drawers" id="infoDrawer"
-
-//v-model="accDrawer" class="drawers" id="accDrawer"
-
-//v-model="friendsDrawer" class="drawers" id="friendsDrawer"
-
 export default {
   name: "navBar",
   props: {
@@ -212,10 +206,6 @@ export default {
         }
         this.infoDrawer = false;
         this.accDrawer = false;
-
-        // this.document.getElementById("infoDrawer").style.display = "none";
-        // document.getElementById("accDrawer").style.display = "none";
-        // document.getElementById("friendsDrawer").style.display = "inline";
       }
     },
     logOut() {
