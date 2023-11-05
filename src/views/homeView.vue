@@ -4,7 +4,7 @@
     <div id="gameWrapper">
       <div id="UIWrapper">
         <div id="boardCont">
-          <div id="board"></div>
+          <boardComp />
         </div>
         <div id="options">
           <div id="piecesContainer">
@@ -31,11 +31,13 @@
 
 <script>
 import navBar from "../components/navBar.vue";
+import boardComp from "../components/boardComp.vue";
 
 export default {
   name: "HomePage",
   components: {
     navBar,
+    boardComp,
   },
   data() {
     return {
@@ -81,27 +83,34 @@ html {
   margin-right: 1rem;
   height: 95vh;
   display: grid;
-  grid-template-columns: auto auto;
-  grid-template-areas: "board chat";
-}
-
-#boardCont {
-  border-radius: 10px;
-  grid-area: board;
-  background-color: gray;
-  width: 140%;
-  height: 100%;
-  float: left;
+  grid-template-columns: 18rem auto 18rem;
+  grid-template-areas: "options board chat";
 }
 
 #options {
-  grid-area: board;
+  grid-area: options;
   border-radius: 10px;
-  width: 40%;
+  width: 18rem;
   height: 100%;
   background-color: aquamarine;
   display: grid;
   grid-template-rows: auto min-content;
+}
+
+#boardCont {
+  grid-area: board;
+  background-color: gray;
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+#chat {
+  grid-area: chat;
+  border-radius: 10px;
+  background-color: beige;
+  width: 18rem;
+  justify-self: right;
 }
 
 /* PIECES BUTTONS */
@@ -173,13 +182,5 @@ html {
   color: red;
   border: none;
   transform: scale(1.4);
-}
-
-#chat {
-  grid-area: chat;
-  border-radius: 10px;
-  background-color: beige;
-  width: 60%;
-  justify-self: right;
 }
 </style>
