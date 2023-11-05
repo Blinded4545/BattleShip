@@ -4,7 +4,7 @@
     <div id="gameWrapper">
       <div id="UIWrapper">
         <div id="boardCont">
-          <boardComp />
+          <boardComp :orientation="orient" :delete="deleteMode" />
         </div>
         <div id="options">
           <div id="piecesContainer">
@@ -15,10 +15,10 @@
             <div id="destroyer"></div>
           </div>
           <div id="buttonsWrapper">
-            <div id="removePiece">
+            <div id="removePiece" @click="changeDeleteMode">
               <v-icon icon="mdi-delete-outline" id="removeIcon"></v-icon>
             </div>
-            <div id="movePieces">
+            <div id="movePieces" @click="changeOrient">
               <v-icon icon="mdi-arrow-all" id="moveIcon"></v-icon>
             </div>
           </div>
@@ -43,9 +43,22 @@ export default {
     return {
       Account: "Camilo",
       fList: { asdad: true, asdadasd: false, asddds: true },
+      orient: "row",
+      deleteMode: false,
     };
   },
-  methods: {},
+  methods: {
+    changeOrient() {
+      if (this.orient == "row") {
+        this.orient = "col";
+      } else {
+        this.orient = "row";
+      }
+    },
+    changeDeleteMode() {
+      this.deleteMode = !this.deleteMode;
+    },
+  },
 };
 </script>
 
