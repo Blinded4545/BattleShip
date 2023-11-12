@@ -4,15 +4,29 @@
     <div id="gameWrapper">
       <div id="UIWrapper">
         <div id="boardCont">
-          <boardComp :orientation="orient" :delete="deleteMode" />
+          <boardComp
+            :orientation="orient"
+            :deleteMode="deleteMode"
+            :currShip="currShip"
+            :shipSize="shipSize"
+          />
         </div>
         <div id="options">
           <div id="piecesContainer">
-            <div id="carrier"></div>
-            <div id="battleShip"></div>
-            <div id="cruiser"></div>
-            <div id="submarine"></div>
-            <div id="destroyer"></div>
+            <div id="carrier" @click="changeCurrentShip('carrier', 3)"></div>
+            <div
+              id="battleShip"
+              @click="changeCurrentShip('battleship', 4)"
+            ></div>
+            <div id="cruiser" @click="changeCurrentShip('cruiser', 2)"></div>
+            <div
+              id="submarine"
+              @click="changeCurrentShip('submarine', 3)"
+            ></div>
+            <div
+              id="destroyer"
+              @click="changeCurrentShip('destroyer', 5)"
+            ></div>
           </div>
           <div id="buttonsWrapper">
             <div id="removePiece" @click="changeDeleteMode">
@@ -45,6 +59,8 @@ export default {
       fList: { asdad: true, asdadasd: false, asddds: true },
       orient: "row",
       deleteMode: false,
+      currShip: "",
+      shipSize: 0,
     };
   },
   methods: {
@@ -57,6 +73,10 @@ export default {
     },
     changeDeleteMode() {
       this.deleteMode = !this.deleteMode;
+    },
+    changeCurrentShip(model, size) {
+      this.currShip = model;
+      this.shipSize = size;
     },
   },
 };
