@@ -60,6 +60,7 @@ export default {
 
     sendMsg() {
       console.log(this.currMsg);
+      this.msgs.push({ id: "camilo", msg: this.currMsg });
       this.currMsg = "";
     },
   },
@@ -76,7 +77,7 @@ export default {
 <style>
 ::-webkit-scrollbar {
   height: 10px;
-  width: 0rem;
+  width: 0.1rem;
 }
 ::-webkit-scrollbar-button {
   display: none;
@@ -95,7 +96,9 @@ export default {
   grid-template-rows: min-content auto;
   width: 100%;
   height: 100%;
+  max-height: 100%;
   text-align: center;
+  overflow: auto;
 }
 
 #startBtn {
@@ -115,12 +118,14 @@ export default {
 #chatLog {
   width: 89%;
   height: 90%;
+  max-height: 36vw;
   margin-left: 1rem;
   margin-bottom: 0.8rem;
   border: solid 1px gray;
   border-radius: 0.5rem;
   display: grid;
   grid-auto-rows: min-content;
+  overflow: auto;
 }
 
 #sendContainer {
@@ -159,6 +164,7 @@ export default {
   padding: 0.3rem;
   margin: 0.5rem;
   background-color: aquamarine;
+  overflow: auto;
   width: fit-content;
   min-width: 5rem;
   max-width: 10rem;

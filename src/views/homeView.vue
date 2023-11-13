@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-        <div id="chat">
+        <div id="chat" style="overflow=scroll;">
           <socialComp />
         </div>
       </div>
