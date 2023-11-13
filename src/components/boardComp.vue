@@ -8,7 +8,7 @@
         @click="hitTile(i)"
         style="background-color: red"
       >
-        <img id="img" src="" />
+        <img id="img" src="" cover />
       </div>
     </div>
   </div>
@@ -101,8 +101,7 @@ export default {
 
             case "battleship": //-----------Battleship-----------
               document.getElementById(e).style.backgroundColor = "transparent";
-              document.getElementById(e).style.backgroundImage =
-                "../assets/BattleShipUpperView.png";
+
               this.placed[this.currShip] += 1;
               break;
 

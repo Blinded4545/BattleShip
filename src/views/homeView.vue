@@ -37,7 +37,9 @@
             </div>
           </div>
         </div>
-        <div id="chat"></div>
+        <div id="chat">
+          <socialComp />
+        </div>
       </div>
     </div>
   </div>
@@ -46,12 +48,14 @@
 <script>
 import navBar from "../components/navBar.vue";
 import boardComp from "../components/boardComp.vue";
+import socialComp from "@/components/socialComp.vue";
 
 export default {
   name: "HomePage",
   components: {
     navBar,
     boardComp,
+    socialComp,
   },
   data() {
     return {
